@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Dividend Tracker{% endblock %}
+{% block content %}
+    <div>
+        <form id="formLogin">
+            <label for="email">Email: <input type="text" id="email" name="email"></label><br>
+            <label for="password">Password: <input type="password" id="password" name="password"></label><br>
+            <input id="btn_login" type="submit" value="Login">
+            <input id="btn_logout" type="submit" value="Logout">
+        </form>
+    </div>
+    <div>
+        <p>This site uses Yahoo finance data to estimate dividend amounts paid based on a stock holding. </p>
+        <p>(number of stocks * price) * (1 + dividend yield) = Estimated Annual Income</p>
+    </div>
+    <div>
+        <form id="formQuote">
+            <label for="shares">Number shares: <input type="text" id="shares" name="shares"></label><br>
+            <label for="ticker">Enter ticker: <input type="text" id="ticker" name="ticker"></label><br>
+            <input id="btn_quote" type="submit" value="Get Quote"><br>
+            <h4>Results</h4>
+
+            <label for="stock_name">Stock: <input type="text" id="qrStock" name="stock_name"></label><br>
+            <label for="price">Price: <input type="text" id="qrPrice" name="price"></label><br>
+            <label for="price">Yield: <input type="text" id="qrYield" name="div_yield"></label><br>
+            <label for="price">Div Per Share: <input type="text" id="qrDivPerShare" name="div_share"></label><br>
+            <label for="price">Est. Annual Income: <input type="text" id="qrEstAnnualIncome" name="div_income"></label><br>
+            <label for="price">Stock Value: <input type="text" id="qrStockValue" name="stock_value"></label><br>
+            <label for="price">Last Updated: <input type="text" id="qrLastUpdated" name="trade_datetime"></label><br>
+            <input id="btn_addPosition" type="submit" value="Add Position">
+        </form>
+    </div>
+    <div>
+        <table id="positions">
+            <tr>
+                <th>Ticker</th>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Div. Yield</th>
+                <th>Est. Div Per Share</th>
+                <th>Est. Div. Income </th>
+                <th>Value</th>
+                <th>Last updates</th>
+            </tr>
+        </table>
+    </div>
+{% endblock %}
